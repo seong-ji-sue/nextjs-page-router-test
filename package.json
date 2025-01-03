@@ -5,7 +5,9 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "yarn lerna run start --stream"
+    "start": "lerna run start",
+    "run": "lerna run run",
+    "run-nextpr": "yarn workspace @nextpr/remote-next-module run run"
   },
   "dependencies": {
     "axios": "^1.7.2",

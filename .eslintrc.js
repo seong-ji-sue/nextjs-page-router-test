@@ -23,6 +23,7 @@ module.exports = {
 	rules: {
 		'react/react-in-jsx-scope': 'off', // 이 줄을 추가하여 규칙을 비활성화
 		'no-unused-vars': 'off', //_ 활성화
+		'react/prop-types': 'off',
 	},
 	settings: {
 		react: {

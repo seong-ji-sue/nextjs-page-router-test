@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  varaious-app:
+    image: nextpr-app:latest
+    container_name: nextpr-app
+    ports:
+      - "3000:3000"
+    env_file:
+      - path: config/.env.production
+        required: true
+
+

@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true PORT=3000 next dev"
+    "start": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true PORT=3000 next dev",
+    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true PORT=3000 next build",
+    "run": "NEXT_PRIVATE_LOCAL_WEBPACK=true node server.mjs"
   },
 
   "keywords": [],

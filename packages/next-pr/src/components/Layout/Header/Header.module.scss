@@ -1,0 +1,10 @@
+.headerContainer {
+  grid-area: header;
+  border: 1px solid black;
+  text-align: center;
+
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+}

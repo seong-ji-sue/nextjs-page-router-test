@@ -1,0 +1,30 @@
+
+$GREY: #cccccc;
+$WHITE: #ffffff;
+$LIGHT-GREY: #e6e6e6;
+$SIZE-8: 8px;
+$SIZE-10: 10px;
+$SIZE-16: 16px;
+$FONT-WEIGHT-BOLD: 800;
+$BORDER-COLOR: black;
+
+
+.navContainer {
+  grid-area: nav;
+  padding: 15px 20px 20px 20px;
+  border: 1px solid $BORDER-COLOR;
+}
+
+.titleContainer {
+  height: 35px;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-weight: $FONT-WEIGHT-BOLD;
+  width: fit-content;
+}
+
+.navItem {
+  padding: 5px 0;
+}
