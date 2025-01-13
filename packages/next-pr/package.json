@@ -5,17 +5,23 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true PORT=3000 next dev",
-    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true PORT=3000 next build",
+    "build": "rollup -c && NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
     "run": "NEXT_PRIVATE_LOCAL_WEBPACK=true node server.mjs",
-    "analyze": "NEXT_PRIVATE_LOCAL_WEBPACK=true ANALYZE=true next build"
+    "analyze": "rollup -c && NEXT_PRIVATE_LOCAL_WEBPACK=true ANALYZE=true next build"
   },
 
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@nextpr/common": "^1.0.0",
     "@module-federation/nextjs-mf": "^8.3.17",
     "@next/bundle-analyzer": "^15.1.3",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup": "^2.79.2",
     "http-proxy-middleware": "^3.0.0",
     "dotenv-webpack": "^8.1.0",
     "express": "^4.19.2",
