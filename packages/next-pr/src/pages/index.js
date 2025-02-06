@@ -1,6 +1,5 @@
 import {useRouter} from 'next/router';
 import Link from 'next/link';
-import Layout from '@components/Layout';
 import {adds} from '@nextpr/common';
 
 const posts = [
@@ -33,7 +32,3 @@ export default function Home() {
 		</div>
 	);
 }
-
-Home.getLayout = function getLayout(page) {
-	return <Layout>{page}</Layout>;
-};

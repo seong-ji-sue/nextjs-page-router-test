@@ -1,7 +1,7 @@
 import Layout from '@components/Layout';
 import '../styles/index.scss';
 
-const MyApp = ({Component, pageProps}) => {
+const App = ({Component, pageProps}) => {
 	const getLayout = Component.getLayout ?? ((page) => page);
 
 	return (
@@ -17,4 +17,4 @@ const MyApp = ({Component, pageProps}) => {
 	);
 };
 
-export default MyApp;
+export default App;

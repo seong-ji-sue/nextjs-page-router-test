@@ -1,0 +1,20 @@
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.loginBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 500px;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.loginBox > input {
+  hight:10000px;
+}
