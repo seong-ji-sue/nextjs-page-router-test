@@ -1,5 +1,14 @@
+import {Button, DefaultComponent, TestCompo} from '@morollpack/components';
+
 const Index = ({baseUrl}) => {
-	return <div>{baseUrl}test</div>;
+	return (
+		<div>
+			{baseUrl}test
+			<Button />
+			<DefaultComponent />
+			<TestCompo />
+		</div>
+	);
 };
 export default Index;
 

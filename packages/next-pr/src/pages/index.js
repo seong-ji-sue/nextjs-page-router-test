@@ -1,6 +1,5 @@
 import {useRouter} from 'next/router';
 import Link from 'next/link';
-import {adds} from '@nextpr/common';
 
 const posts = [
 	{id: 1, slug: 1, title: '1페이지'},
@@ -13,8 +12,7 @@ export default function Home() {
 
 	return (
 		<div>
-			ssr 프로젝트 입니다
-			<div>{adds(1, 1)}</div>
+			ssr 프로젝트
 			<ul>
 				{posts.map((post) => (
 					<li key={post.id}>
