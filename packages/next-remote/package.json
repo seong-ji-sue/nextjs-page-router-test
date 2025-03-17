@@ -2,7 +2,7 @@
   "name": "@nextpr/remote-next-module",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.mjs",
   "scripts": {
     "start": "NEXT_PRIVATE_LOCAL_WEBPACK=true cross-env NODE_ENV=development node server.mjs",
     "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true cross-env next build",

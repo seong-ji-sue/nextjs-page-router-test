@@ -7,6 +7,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 dotenv.config({path: join(__dirname, `../../.env.${process.env.NODE_ENV}`)});
 
+console.log('NODE_ENV-webpack', process.env.NODE_ENV);
+console.log('NEXT_PUBLIC_HOST_URL--webpack', process.env.NEXT_PUBLIC_HOST_URL);
+
 const config = {
 	output: 'standalone',
 	reactStrictMode: false,
