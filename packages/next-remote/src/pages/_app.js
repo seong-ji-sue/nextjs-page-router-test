@@ -1,6 +1,3 @@
-// import '@eddy-ui/client-common/color';
-// import '@eddy-ui/client-common/global-style';
-
 import Head from 'next/head';
 import Providers from '@/Provider';
 import React from 'react';

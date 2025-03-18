@@ -1,12 +1,12 @@
 import {parse} from 'url';
 import next from 'next';
-import https from 'node:https';
 import fs from 'node:fs';
 import {resolve} from 'path';
 import config from './next.config.js';
 import express from 'express';
-import cors from 'cors';
+import https from 'node:https';
 import * as http from "http";
+
 
 const __dirname = resolve();
 const dev = process.env.NODE_ENV !== 'production';
@@ -14,23 +14,17 @@ const app = next({dev, dir: __dirname, conf: config});
 const handle = app.getRequestHandler();
 
 // const httpsOptions = {
-// 	key: fs.readFileSync('./certificates/STAR.netand.co.kr_key.pem'),
-// 	cert: fs.readFileSync('./certificates/STAR.netand.co.kr_crt.pem'),
+//     key: fs.readFileSync('./certificates/STAR.netand.co.kr_key.pem'),
+//     cert: fs.readFileSync('./certificates/STAR.netand.co.kr_crt.pem'),
 // };
-
-
 
 app.prepare().then(() => {
     const server = express();
 
-    server.use(
-        cors({origin: [process.env.NEXT_PUBLIC_HOST_URL], credentials: true}),
-    );
-
-    server.use(function (req, res, next) {
+    server.use((req, res, next) => {
         res.setHeader(
-            'Access-Control-Allow-Origin',
-            process.env.NEXT_PUBLIC_HOST_URL,
+            'Access-Control-Allow-Methods',
+            'GET, POST, OPTIONS, PUT, PATCH, DELETE',
         );
         res.setHeader('Access-Control-Allow-Credentials', 'true');
         res.setHeader(
@@ -50,5 +44,12 @@ app.prepare().then(() => {
         handle(req, res, parsedUrl);
     });
 
-    http.createServer(server).listen(process.env.NEXT_PUBLIC_REMOTE_URL);
+    http
+        .createServer(server)
+        .listen( process.env.NEXT_PUBLIC_HOST_PORT, (err) => {
+            if (err) {
+                console.log(err);
+                throw err;
+            }
+        });
 });

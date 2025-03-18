@@ -9,7 +9,7 @@
   "scripts": {
     "start": "NEXT_PRIVATE_LOCAL_WEBPACK=true cross-env NODE_ENV=development node server.mjs",
     "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
-    "run": "NEXT_PRIVATE_LOCAL_WEBPACK=true HOST='192.168.3.235' PORT=4000 node .next/standalone/packages/next-host/server.js"
+    "run": "NEXT_PRIVATE_LOCAL_WEBPACK=true node server.mjs"
   },
   "dependencies": {
     "@module-federation/nextjs-mf": "^8.3.17",

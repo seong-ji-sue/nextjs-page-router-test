@@ -1,6 +1,3 @@
-import '@eddy-ui/client-common/color';
-import '@eddy-ui/client-common/global-style';
-
 import React, {ReactElement, Suspense} from 'react';
 import Head from 'next/head';
 import {init} from '@module-federation/runtime';
