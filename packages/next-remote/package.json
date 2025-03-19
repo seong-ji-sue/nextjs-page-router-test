@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.mjs",
   "scripts": {
-    "start": "NEXT_PRIVATE_LOCAL_WEBPACK=true cross-env NODE_ENV=development node server.mjs",
-    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true cross-env next build",
-    "run": "NEXT_PRIVATE_LOCAL_WEBPACK=true node server.mjs"
+    "start": "cross-env PORT=4001 NODE_ENV=development NEXT_PRIVATE_LOCAL_WEBPACK=true next dev",
+    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
+    "run": "NEXT_PRIVATE_LOCAL_WEBPACK=true node .server.js"
   },
   "keywords": [],
   "author": "",

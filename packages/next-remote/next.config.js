@@ -1,9 +1,6 @@
 const {join} = require('path');
 const {NextFederationPlugin} = require('@module-federation/nextjs-mf');
 const dotenv = require('dotenv');
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-	enabled: process.env.ANALYZE === 'true',
-});
 
 dotenv.config({path: join(__dirname, `../../.env.${process.env.NODE_ENV}`)});
 
@@ -35,6 +32,28 @@ const config = {
 			);
 		}
 		return config;
+	},
+	async headers() {
+		return [
+			{
+				source: '/(.*)',
+				headers: [
+					{
+						key: 'Access-Control-Allow-Origin',
+						value: process.env.NEXT_PUBLIC_HOST_URL,
+					},
+					{key: 'Access-Control-Allow-Credentials', value: 'true'},
+					{
+						key: 'Access-Control-Allow-Headers',
+						value: 'Content-Range, Content-Type, Authorization',
+					},
+					{
+						key: 'Access-Control-Expose-Headers',
+						value: 'Content-Range, Content-Type, Authorization',
+					},
+				],
+			},
+		];
 	},
 	publicRuntimeConfig: {},
 	images: {domains: ['*'], minimumCacheTTL: 60},

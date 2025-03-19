@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Providers from '@/Provider';
 import React from 'react';
 
 function MyApp({Component, pageProps}) {
@@ -8,12 +7,10 @@ function MyApp({Component, pageProps}) {
 			<Head>
 				<meta charSet='UTF-8' />
 				<meta name='viewport' content='width=device-width' />
-				<title>Fabric</title>
+				<title>Remote</title>
 			</Head>
 
-			<Providers>
-				<Component {...pageProps} />
-			</Providers>
+			<Component {...pageProps} />
 		</>
 	);
 }

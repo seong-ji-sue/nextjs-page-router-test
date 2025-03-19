@@ -5,12 +5,15 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "lerna run start"
+    "start:nginx": "nginx -c $(pwd)/nginx.conf -g 'daemon off;'",
+    "start:services": "lerna run start",
+    "start": "concurrently \"npm run start:nginx\" \"npm run start:services\""
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.23.9",
     "babel-eslint": "^10.1.0",
+    "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.2.3",
     "eslint-config-prettier": "^9.1.0",

@@ -1,4 +1,4 @@
-import React, {ReactElement, Suspense} from 'react';
+import React from 'react';
 import Head from 'next/head';
 import {init} from '@module-federation/runtime';
 import getConfig from 'next/config';
@@ -20,7 +20,7 @@ function MyApp({Component, pageProps}) {
 			<Head>
 				<meta charSet='UTF-8' />
 				<meta name='viewport' content='width=device-width' />
-				<title>Fabric</title>
+				<title>Client</title>
 			</Head>
 
 			<Component {...pageProps} />
