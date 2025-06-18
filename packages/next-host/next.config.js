@@ -4,9 +4,6 @@ const dotenv = require('dotenv');
 
 dotenv.config({path: join(__dirname, `../../.env.${process.env.NODE_ENV}`)});
 
-console.log('NODE_ENV-webpack', process.env.NODE_ENV);
-console.log('NEXT_PUBLIC_HOST_URL--webpack', process.env.NEXT_PUBLIC_HOST_URL);
-
 const config = {
 	output: 'standalone',
 	reactStrictMode: false,
@@ -30,6 +27,16 @@ const config = {
 					},
 				}),
 			);
+			if (process.env.NODE_ENV === 'production') {
+				config.optimization.minimizer.forEach((plugin) => {
+					if (
+						plugin.constructor.name === 'TerserPlugin' &&
+						plugin.options.terserOptions?.compress
+					) {
+						plugin.options.terserOptions.compress.drop_console = true;
+					}
+				});
+			}
 		}
 		return config;
 	},
@@ -59,7 +66,7 @@ const config = {
 		];
 	},
 	publicRuntimeConfig: {
-		remote: process.env.NEXT_PUBLIC_REMOTE_URL,
+		remote: process.env.NEXT_PUBLIC_REMOTE_URL || '%%NEXT_PUBLIC_REMOTE_URL%%',
 	},
 	images: {domains: ['*'], minimumCacheTTL: 60},
 	sassOptions: {includePaths: [join(__dirname, 'styles')]},
@@ -67,6 +74,10 @@ const config = {
 		optimizePackageImports: [],
 	},
 	transpilePackages: [],
+	compiler: {
+		removeConsole:
+			process.env.NODE_ENV === 'production' ? {exclude: []} : false,
+	},
 };
 
 module.exports = config;

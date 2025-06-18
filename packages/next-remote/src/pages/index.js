@@ -1,3 +1,3 @@
 export default function Home() {
-	return <div>host Test</div>;
+	return <div>remote Test</div>;
 }

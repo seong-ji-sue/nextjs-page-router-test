@@ -2,33 +2,37 @@
   "name": "@nextpr/remote-next-module",
   "version": "1.0.0",
   "description": "",
-  "main": "server.mjs",
   "scripts": {
-    "start": "cross-env PORT=4001 NODE_ENV=development NEXT_PRIVATE_LOCAL_WEBPACK=true next dev",
-    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
-    "run": "NEXT_PRIVATE_LOCAL_WEBPACK=true node .server.js"
+    "start": "NEXT_PRIVATE_LOCAL_WEBPACK=true cross-env NODE_ENV=development node server.mjs",
+    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true cross-env next build",
+    "run": "NEXT_PRIVATE_LOCAL_WEBPACK=true sh start.sh"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@module-federation/nextjs-mf": "^8.3.17",
+    "@nextpr/common": "^1.0.0",
+    "express": "^4.21.2",
     "dotenv-webpack": "^8.1.0",
-    "express": "^4.19.2",
     "form-data": "^4.0.2",
     "formidable": "^3.5.2",
-    "http-proxy-middleware": "^3.0.0",
+    "recoil": "^0.7.7",
+    "recoil-persist": "^5.1.0",
+    "react-toastify": "^11.0.2",
+    "qs": "^6.13.1",
+    "cors": "^2.8.5",
+    "sass": "^1.83.1",
     "next": "^14.2.3",
     "node-fetch": "^3.3.2",
     "path": "^0.12.7",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sass": "^1.77.4",
     "url": "^0.11.3",
     "webpack": "^5.92.1"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "@module-federation/nextjs-mf": "^8.8.11",
+    "cross-env": "^7.0.3",
+    "webpack": "^5.99.5"
   }
 }

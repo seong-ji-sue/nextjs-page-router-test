@@ -20,7 +20,7 @@ const config = {
 					name: 'remote',
 					filename: 'static/chunks/remoteEntry.js',
 					exposes: {
-						'./Test': './src/pages/file/index.js',
+						'./Test': './src/pages/index.js',
 					},
 					shared: {
 						'next/navigation': {singleton: true},
@@ -30,6 +30,16 @@ const config = {
 					},
 				}),
 			);
+			if (process.env.NODE_ENV === 'production') {
+				config.optimization.minimizer.forEach((plugin) => {
+					if (
+						plugin.constructor.name === 'TerserPlugin' &&
+						plugin.options.terserOptions?.compress
+					) {
+						plugin.options.terserOptions.compress.drop_console = true;
+					}
+				});
+			}
 		}
 		return config;
 	},
@@ -55,13 +65,16 @@ const config = {
 			},
 		];
 	},
-	publicRuntimeConfig: {},
 	images: {domains: ['*'], minimumCacheTTL: 60},
 	sassOptions: {includePaths: [join(__dirname, 'styles')]},
 	experimental: {
 		optimizePackageImports: [],
 	},
 	transpilePackages: [],
+	compiler: {
+		removeConsole:
+			process.env.NODE_ENV === 'production' ? {exclude: []} : false,
+	},
 };
 
 module.exports = config;
