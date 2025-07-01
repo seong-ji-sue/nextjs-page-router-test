@@ -1,0 +1,20 @@
+{
+  "name": "@nextpr/server-common",
+  "version": "1.0.0",
+  "description": "Server 로직 공통 요소",
+  "author": "",
+  "homepage": "",
+  "license": "ISC",
+  "exports": {
+    "./controllers": "./src/controllers/index.js",
+    "./middleware": "./src/middleware/token.js",
+    "./redis": "./src/utils/redis.js",
+    "./sseConnection": "./src/utils/sseConnection.js"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+
+  }
+}
