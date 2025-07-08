@@ -7,14 +7,12 @@
   "license": "ISC",
   "exports": {
     "./controllers": "./src/controllers/index.js",
-    "./middleware": "./src/middleware/token.js",
-    "./redis": "./src/utils/redis.js",
-    "./sseConnection": "./src/utils/sseConnection.js"
+    "./middleware": "./src/middleware/index.js"
   },
-  "devDependencies": {
-
+  "peerDependencies": {
+    "axios": "^1.8.4"
   },
   "dependencies": {
-
+    "path-to-regexp": "^8.2.0"
   }
 }

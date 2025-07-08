@@ -6,6 +6,10 @@ export const regExpToPathConvertor = (path, options) => {
 	return compiler(options);
 };
 
-export const reqApi = Object.freeze({
-	test: '/test/:testNum',
+export const bffReqApi = Object.freeze({
+	test: '/testa',
+});
+
+export const reqApiKeys = Object.freeze({
+	test: {key: 'testNum'},
 });

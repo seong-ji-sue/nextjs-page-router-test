@@ -21,6 +21,7 @@ const config = {
 					filename: 'static/chunks/remoteEntry.js',
 					exposes: {
 						'./Test': './src/pages/index.js',
+						'./Test/Test': './src/pages/test/index.js',
 					},
 					shared: {
 						'next/navigation': {singleton: true},
@@ -49,8 +50,8 @@ const config = {
 				source: '/(.*)',
 				headers: [
 					{
-						key: 'Access-Control-Allow-Origin',
-						value: process.env.NEXT_PUBLIC_HOST_URL,
+						key: 'Access-Control-Allow-Methods',
+						value: 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
 					},
 					{key: 'Access-Control-Allow-Credentials', value: 'true'},
 					{
@@ -61,6 +62,9 @@ const config = {
 						key: 'Access-Control-Expose-Headers',
 						value: 'Content-Range, Content-Type, Authorization',
 					},
+					{key: 'X-XSS-Protection', value: '1; mode=block'},
+					{key: 'X-Content-Type-Options', value: 'nosniff'},
+					{key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin'},
 				],
 			},
 		];

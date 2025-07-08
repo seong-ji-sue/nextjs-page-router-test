@@ -2,16 +2,15 @@
   "name": "@nextpr/remote-next-module",
   "version": "1.0.0",
   "description": "",
-  "scripts": {
-    "start": "NEXT_PRIVATE_LOCAL_WEBPACK=true cross-env NODE_ENV=development node server.mjs",
-    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true cross-env next build",
-    "run": "NEXT_PRIVATE_LOCAL_WEBPACK=true sh start.sh"
-  },
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "start": "NEXT_PRIVATE_LOCAL_WEBPACK=true cross-env NODE_ENV=development node server.mjs",
+    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
+    "run": "NEXT_PRIVATE_LOCAL_WEBPACK=true sh start.sh"
+  },
   "dependencies": {
     "@nextpr/common": "^1.0.0",
-    "express": "^4.21.2",
     "dotenv-webpack": "^8.1.0",
     "form-data": "^4.0.2",
     "formidable": "^3.5.2",
@@ -26,13 +25,13 @@
     "path": "^0.12.7",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "url": "^0.11.3",
-    "webpack": "^5.92.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@module-federation/nextjs-mf": "^8.8.11",
     "cross-env": "^7.0.3",
-    "webpack": "^5.99.5"
+    "webpack": "^5.99.5",
+    "url": "^0.11.3",
+    "express": "^4.21.2"
   }
 }

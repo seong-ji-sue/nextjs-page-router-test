@@ -3,9 +3,7 @@ import {parse} from 'url';
 import express from 'express';
 import config from './next.config.js';
 import {resolve} from 'path';
-import fs from 'node:fs';
-import https from 'node:https';
-import * as http from "http";
+import * as http from 'http';
 
 const __dirname = resolve();
 const dev = process.env.NODE_ENV !== 'production';
@@ -18,36 +16,22 @@ const handle = app.getRequestHandler();
 // };
 
 app.prepare().then(() => {
-    const server = express();
+	const server = express();
 
-    server.use((req, res, next) => {
-        console.log(req.url);
-        res.setHeader(
-            'Access-Control-Allow-Methods',
-            'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-        );
-        res.setHeader('Access-Control-Allow-Credentials', 'true');
-        res.setHeader(
-            'Access-Control-Allow-Headers',
-            'Content-Range, Content-Type, Authorization',
-        );
-        res.setHeader(
-            'Access-Control-Expose-Headers',
-            'Content-Range, Content-Type, Authorization',
-        );
+	server.use((req, res, next) => {
+		next();
+	});
 
-        next();
-    });
+	server.use((req, res) => {
+		const parsedUrl = parse(req.url, true);
+		handle(req, res, parsedUrl);
+	});
 
-    server.all('*', (req, res) => {
-        const parsedUrl = parse(req.url, true);
-        handle(req, res, parsedUrl);
-    });
-
-    http.createServer( server).listen(process.env.NEXT_PUBLIC_HOST_PORT, (err) => {
-        if (err) {
-            console.log(err);
-            throw err;
-        }
-    });
+	//https 설정 넣기
+	http.createServer(server).listen(process.env.NEXT_PUBLIC_HOST_PORT, (err) => {
+		if (err) {
+			console.log(err);
+			throw err;
+		}
+	});
 });

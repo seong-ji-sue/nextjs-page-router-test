@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import Provider from '@/Provider';
 
 function MyApp({Component, pageProps}) {
 	return (
@@ -10,7 +11,9 @@ function MyApp({Component, pageProps}) {
 				<title>Remote</title>
 			</Head>
 
-			<Component {...pageProps} />
+			<Provider>
+				<Component {...pageProps} />
+			</Provider>
 		</>
 	);
 }

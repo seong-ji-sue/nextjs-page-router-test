@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import Head from 'next/head';
-import {init} from '@module-federation/runtime';
 import getConfig from 'next/config';
+import {init} from '@module-federation/runtime';
+import Provider from '@/Provider';
+import Layout from '@/components/Layout';
+import {DefaultComponent} from '@nextpr/common/components';
 const {publicRuntimeConfig} = getConfig();
 
 init({
@@ -15,6 +18,7 @@ init({
 });
 
 function MyApp({Component, pageProps}) {
+	const getLayout = Component.getLayout ?? ((page) => page);
 	return (
 		<>
 			<Head>
@@ -22,8 +26,22 @@ function MyApp({Component, pageProps}) {
 				<meta name='viewport' content='width=device-width' />
 				<title>Client</title>
 			</Head>
-
-			<Component {...pageProps} />
+			<Provider>
+				{Component.getLayout ? (
+					getLayout(
+						<>
+							<Component {...pageProps} />
+							<DefaultComponent />
+						</>,
+					)
+				) : (
+					<Layout>
+						<Suspense fallback={<div>Loading</div>}>
+							<Component {...pageProps} />
+						</Suspense>
+					</Layout>
+				)}
+			</Provider>
 		</>
 	);
 }
