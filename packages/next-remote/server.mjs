@@ -36,6 +36,12 @@ app.prepare().then(() => {
 		const parsedUrl = parse(req.url, true);
 		handle(req, res, parsedUrl);
 	});
-
-	http.createServer(server).listen(process.env.NEXT_PUBLIC_REMOTE_PORT);
+	http
+		.createServer(server)
+		.listen(process.env.NEXT_PUBLIC_REMOTE_PORT, (err) => {
+			if (err) {
+				console.log(err);
+				throw err;
+			}
+		});
 });

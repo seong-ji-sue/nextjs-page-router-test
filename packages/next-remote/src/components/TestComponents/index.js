@@ -1,5 +1,3 @@
-'use client';
-
 import {useCallback, useEffect, useState} from 'react';
 import Axios from '@nextpr/common/axios';
 
@@ -9,7 +7,7 @@ const TestComponents = ({api}) => {
 	const getData = useCallback(async () => {
 		try {
 			const res = await Axios.get(api);
-			console.log(res.data);
+
 			setData(res?.data || []);
 		} catch (e) {
 			console.error(e);
@@ -18,8 +16,8 @@ const TestComponents = ({api}) => {
 	}, [api]);
 
 	useEffect(() => {
-		getData();
-	}, [getData]);
+		if (api) getData();
+	}, [api]);
 
 	return (
 		<div>

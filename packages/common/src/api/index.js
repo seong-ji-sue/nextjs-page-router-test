@@ -7,7 +7,7 @@ export const regExpToPathConvertor = (path, options) => {
 };
 
 export const bffReqApi = Object.freeze({
-	test: '/testa',
+	test: '/api/testa',
 });
 
 export const reqApiKeys = Object.freeze({
