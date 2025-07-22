@@ -5,9 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "start:nginx": "nginx -c $(pwd)/nginx.conf -g 'daemon off;'",
-    "start:services": "lerna run start",
-    "start": "concurrently \"npm run start:nginx\" \"npm run start:services\""
+    "start": "lerna run start",
+    "start:nginx": "nginx -c $(pwd)/nginx.conf -g 'daemon off;'"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
