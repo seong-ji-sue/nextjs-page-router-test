@@ -16,24 +16,25 @@ FROM base as builder
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/packages/next-host/node_modules ./packages/next-host/node_modules
-COPY --from=deps /app/packages/server-common/node_modules ./packages/server-common/node_modules
+#node_modules 가 없음
+#COPY --from=deps /app/packages/server-common/node_modules ./packages/server-common/node_modules
 
 COPY package.json lerna.json yarn.lock* ./
 
 COPY ./packages/next-host ./packages/next-host
 COPY ./packages ./packages
 
-RUN NODE_OPTIONS="--max-old-space-size=4096" yarn workspace @eddy-am-ui/next-host build
+RUN NODE_OPTIONS="--max-old-space-size=4096" yarn workspace @nextpr/next-host build
 
 FROM base AS runner
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+#RUN addgroup --system --gid 1001 nodejs
+#RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder --chown=nextjs:nodejs /app/packages/next-host/.next/standalone/ ./
 COPY --from=builder --chown=nextjs:nodejs /app/packages/next-host/.next/static ./packages/next-host/.next/static
 
 COPY ./packages/next-host/start.sh ./packages/next-host/
-RUN chmod +x /app/packages/next-host/start.sh
+#RUN chmod +x /app/packages/next-host/start.sh
 
 CMD ["yarn", "workspace", "@nextpr/next-host", "run", "run"]
