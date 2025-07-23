@@ -66,7 +66,7 @@ const config = {
 		];
 	},
 	publicRuntimeConfig: {
-		remote: process.env.NEXT_PUBLIC_REMOTE_URL || '%%NEXT_PUBLIC_REMOTE_URL%%',
+		remote: process.env.NEXT_PUBLIC_TABLE_URL || '%%NEXT_PUBLIC_TABLE_URL%%',
 	},
 	images: {domains: ['*'], minimumCacheTTL: 60},
 	sassOptions: {includePaths: [join(__dirname, 'styles')]},

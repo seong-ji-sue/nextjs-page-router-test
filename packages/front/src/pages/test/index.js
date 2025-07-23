@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import {loadRemote} from '@module-federation/runtime';
 
-const Component = dynamic(() => loadRemote('remote/Test/Test'), {ssr: false});
+const Component = dynamic(() => loadRemote('remote/Test'), {ssr: false});
 
 const Index = ({remoteUrl}) => {
 	return <Component baseUrl={remoteUrl} />;
@@ -10,5 +10,5 @@ const Index = ({remoteUrl}) => {
 export default Index;
 
 export async function getServerSideProps() {
-	return {props: {remoteUrl: process.env.NEXT_PUBLIC_REMOTE_URL}};
+	return {props: {remoteUrl: process.env.NEXT_PUBLIC_TABLE_URL}};
 }

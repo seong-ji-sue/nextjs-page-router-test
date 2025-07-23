@@ -28,10 +28,12 @@ app.prepare().then(() => {
 	});
 
 	//https 설정 넣기
-	http.createServer(server).listen(process.env.NEXT_PUBLIC_HOST_PORT, (err) => {
-		if (err) {
-			console.log(err);
-			throw err;
-		}
-	});
+	http
+		.createServer(server)
+		.listen(process.env.NEXT_PUBLIC_FRONT_PORT, (err) => {
+			if (err) {
+				console.log(err);
+				throw err;
+			}
+		});
 });

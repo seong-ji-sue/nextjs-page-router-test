@@ -20,13 +20,13 @@ app.prepare().then(() => {
 	const server = express();
 
 	server.use(
-		cors({origin: [process.env.NEXT_PUBLIC_HOST_URL], credentials: true}),
+		cors({origin: [process.env.NEXT_PUBLIC_FRONT_URL], credentials: true}),
 	);
 
 	server.use((req, res, next) => {
 		res.setHeader(
 			'Access-Control-Allow-Origin',
-			process.env.NEXT_PUBLIC_HOST_URL,
+			process.env.NEXT_PUBLIC_FRONT_URL,
 		);
 
 		next();
@@ -38,7 +38,7 @@ app.prepare().then(() => {
 	});
 	http
 		.createServer(server)
-		.listen(process.env.NEXT_PUBLIC_REMOTE_PORT, (err) => {
+		.listen(process.env.NEXT_PUBLIC_TABLE_PORT, (err) => {
 			if (err) {
 				console.log(err);
 				throw err;
