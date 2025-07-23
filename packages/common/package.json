@@ -7,7 +7,9 @@
     "./components": "./src/components/index.js",
     "./store": "./src/store/auth.js",
     "./api": "./src/api/index.js",
-    "./axios": "./src/axios/index.js"
+    "./axios": "./src/axios/index.js",
+    "./contents": "./src/contents/index.js",
+    "./icons": "./src/icons/index.tsx"
   },
   "peerDependencies": {
     "axios": "^1.8.4",
