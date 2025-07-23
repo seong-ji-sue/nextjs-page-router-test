@@ -4,7 +4,7 @@ import React from 'react';
 import {useRecoilState} from 'recoil';
 import {navState} from '@/store/nav';
 import NavItem from '@/components/Layout/Nav/NavItem';
-import {navArrowDownIcon, navArrowUpIcon} from '@nextpr/common/src/icons';
+import {navArrowDownIcon, navArrowUpIcon} from '@nextpr/common/icons';
 
 const NavRoot = ({title, content, deep, base}) => {
 	const [nav, setNav] = useRecoilState(navState);

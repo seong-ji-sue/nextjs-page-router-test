@@ -6,10 +6,13 @@ import Link from 'next/link';
 
 const exceptions = [];
 
-const NavLeaf = ({title, url, deep}) => {
+const NavLeaf = ({title, url}) => {
 	// const nav = useRecoilValue(navState);
 	const pathname = usePathname();
-	const isSelected = exceptions.includes(url);
+	const isSelected = exceptions.includes(url)
+		? pathname === url
+		: pathname?.startsWith(url);
+
 	const onClickNav = (e) => {
 		if (pathname === url) e.preventDefault();
 	};
