@@ -4,7 +4,7 @@ import getConfig from 'next/config';
 import {init} from '@module-federation/runtime';
 import Provider from '@/Provider';
 import Layout from '@/components/Layout';
-import {DefaultComponent} from '@nextpr/common/components';
+import {DefaultComponent} from '@nextpr/client-common/components';
 const {publicRuntimeConfig} = getConfig();
 
 init({

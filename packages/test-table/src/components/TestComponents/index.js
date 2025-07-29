@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useState} from 'react';
-import Axios from '@nextpr/common/axios';
+import Axios from '@nextpr/client-common/axios';
 
 const TestComponents = ({api}) => {
 	const [data, setData] = useState([]);

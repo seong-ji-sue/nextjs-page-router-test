@@ -1,7 +1,7 @@
 import Axios from '@nextpr/common/axios';
 import TestComponents from '@/components/TestComponents';
 import {bffReqApi} from '@nextpr/common/api';
-import {DefaultComponent} from '@nextpr/common/components';
+import {DefaultComponent} from '@nextpr/client-common/components';
 
 const Index = ({baseUrl}) => {
 	if (baseUrl && Axios.defaults.baseURL != baseUrl) {
