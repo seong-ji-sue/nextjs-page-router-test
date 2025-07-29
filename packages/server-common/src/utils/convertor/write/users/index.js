@@ -1,4 +1,4 @@
-const test = (data) => {
+const users = (data) => {
 	if (!data) return {};
 	return {
 		name: data.name,
@@ -6,4 +6,4 @@ const test = (data) => {
 	};
 };
 
-export default {test};
+export default {users};

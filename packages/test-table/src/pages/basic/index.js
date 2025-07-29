@@ -1,7 +1,7 @@
-import Axios from '@nextpr/common/axios';
-import TestComponents from '@/components/TestComponents';
-import {bffReqApi} from '@nextpr/common/api';
+import Axios from '@nextpr/client-common/axios';
 import {DefaultComponent} from '@nextpr/client-common/components';
+import {bffReqApi} from '@nextpr/client-common/api';
+import FindAll from '@/components/FindAll';
 
 const Index = ({baseUrl}) => {
 	if (baseUrl && Axios.defaults.baseURL != baseUrl) {
@@ -9,7 +9,7 @@ const Index = ({baseUrl}) => {
 		Axios.defaults.baseURL = baseUrl;
 	}
 
-	const api = bffReqApi.test;
+	const api = bffReqApi.users;
 
 	const props = {
 		api: api,
@@ -17,7 +17,7 @@ const Index = ({baseUrl}) => {
 
 	return (
 		<div>
-			<TestComponents {...props} />
+			<FindAll {...props} />
 			<DefaultComponent />
 		</div>
 	);

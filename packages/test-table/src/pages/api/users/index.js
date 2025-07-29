@@ -5,7 +5,7 @@ import {ApiMethods} from '@nextpr/server-common/methods';
 export default async function handler(req, res) {
 	try {
 		if (req.method === ApiMethods.GET) {
-			await middleware(req, res, controllers.test.findAll);
+			await middleware(req, res, controllers.users.findAll);
 		}
 	} catch (e) {
 		console.error(e);

@@ -1,7 +1,7 @@
 import {useCallback, useEffect, useState} from 'react';
 import Axios from '@nextpr/client-common/axios';
 
-const TestComponents = ({api}) => {
+const FindAll = ({api}) => {
 	const [data, setData] = useState([]);
 
 	const getData = useCallback(async () => {
@@ -23,12 +23,16 @@ const TestComponents = ({api}) => {
 		<div>
 			{data.map((d) => (
 				<ul key={d.name}>
+					<li>{d.id}</li>
 					<li>{d.name}</li>
 					<li>{d.description}</li>
+					<li>{d.status}</li>
+					<li>{d.createdAt}</li>
+					<li>{d.updatedAt}</li>
 				</ul>
 			))}
 		</div>
 	);
 };
 
-export default TestComponents;
+export default FindAll;

@@ -5,7 +5,8 @@
   "license": "ISC",
   "type": "module",
   "exports": {
-    "./contents": "./src/contents/index.js"
+    "./contents": "./src/contents/index.js",
+    "./options": "./src/options/index.js"
   },
   "dependencies": {
 
