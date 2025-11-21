@@ -21,6 +21,7 @@ const config = {
 					filename: 'static/chunks/remoteEntry.js',
 					exposes: {
 						'./Test': './src/pages/index.js',
+						'./Edit': './src/pages/test/index.js',
 					},
 					shared: {
 						'next/navigation': {singleton: true},

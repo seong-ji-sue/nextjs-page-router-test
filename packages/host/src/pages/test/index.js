@@ -10,5 +10,5 @@ const Index = ({remoteUrl}) => {
 export default Index;
 
 export async function getServerSideProps() {
-	return {props: {remoteUrl: process.env.NEXT_PUBLIC_TABLE_URL}};
+	return {props: {remoteUrl: process.env.NEXT_PUBLIC_REMOTE_URL}};
 }

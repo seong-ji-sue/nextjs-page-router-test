@@ -8,7 +8,6 @@ FROM base AS deps
 COPY package.json lerna.json yarn.lock* ./
 COPY ./packages/host/package.json ./packages/host/
 COPY ./packages/server-common/package.json ./packages/server-common/
-COPY ./packages/common/package.json ./packages/common/
 COPY ./packages/client-common/package.json ./client-packages/common/
 
 RUN yarn install --frozen-lockfile

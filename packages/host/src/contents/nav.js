@@ -6,6 +6,10 @@ export const navContent = [
 		url: urlPath.path,
 	},
 	{
+		title: urlPath.test.label,
+		url: urlPath.test.path,
+	},
+	{
 		title: urlPath.table.label,
 		base: urlPath.table.path,
 		content: [

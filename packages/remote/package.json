@@ -10,7 +10,6 @@
     "run": "NEXT_PRIVATE_LOCAL_WEBPACK=true sh start.sh"
   },
   "dependencies": {
-    "@nextpr/common": "^1.0.0",
     "@nextpr/server-common": "^1.0.0",
     "dotenv-webpack": "^8.1.0",
     "form-data": "^4.0.2",
