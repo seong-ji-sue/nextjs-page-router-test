@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import {loadRemote} from '@module-federation/runtime';
 
-const Component = dynamic(() => loadRemote('remote/Test/Test'), {ssr: false});
+const Component = dynamic(() => loadRemote('remote/Edit'), {ssr: false});
 
 const Index = ({remoteUrl}) => {
 	return <Component baseUrl={remoteUrl} />;

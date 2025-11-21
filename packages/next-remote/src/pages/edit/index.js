@@ -1,7 +1,7 @@
 import Axios from '@nextpr/common/axios';
-import TestComponents from '@/components/TestComponents';
 import {bffReqApi} from '@nextpr/common/api';
 import {DefaultComponent} from '@nextpr/common/components';
+import Editor from '@/components/edit/Editor';
 
 const Index = ({baseUrl}) => {
 	if (baseUrl && Axios.defaults.baseURL != baseUrl) {
@@ -17,7 +17,7 @@ const Index = ({baseUrl}) => {
 
 	return (
 		<div>
-			<TestComponents {...props} />
+			<Editor {...props} />
 			<DefaultComponent />
 		</div>
 	);

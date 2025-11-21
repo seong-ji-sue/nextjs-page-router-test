@@ -1,3 +1,4 @@
 import test from './test';
+import auth from './auth';
 
-export default {test};
+export default {test, auth};

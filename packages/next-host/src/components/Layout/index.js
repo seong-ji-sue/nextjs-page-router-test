@@ -1,5 +1,6 @@
 import Nav from '@/components/Layout/Nav';
 import Header from '@/components/Layout/Header';
+import PrivateProvider from '@/provider/PrivateProvider';
 
 const Layout = ({children}) => {
 	return (
@@ -11,4 +12,4 @@ const Layout = ({children}) => {
 	);
 };
 
-export default Layout;
+export default PrivateProvider(Layout);

@@ -8,6 +8,9 @@ export const regExpToPathConvertor = (path, options) => {
 
 export const bffReqApi = Object.freeze({
 	test: '/api/testa',
+	auth: {
+		login: '/api/auth/authorized',
+	},
 });
 
 export const reqApiKeys = Object.freeze({
