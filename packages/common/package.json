@@ -1,20 +1,11 @@
 {
   "name": "@nextpr/common",
   "version": "1.0.0",
-  "description": "사용되는 공통 요소",
+  "description": "사용되는 공통 텍스트 함수",
   "license": "ISC",
+  "type": "module",
   "exports": {
-    "./components": "./src/components/index.js",
-    "./store": "./src/store/auth.js",
-    "./api": "./src/api/index.js",
-    "./axios": "./src/axios/index.js"
-  },
-  "peerDependencies": {
-    "axios": "^1.8.4",
-    "next": "^14.2.3",
-    "react": "^18.3.1",
-    "react-toastify": "^10.0.5",
-    "recoil": "^0.7.7"
+    "./contents": "./src/contents/index.js"
   },
   "dependencies": {
 
