@@ -39,4 +39,6 @@ const PrivateProvider = (Component) => {
 	return WrappedComponent;
 };
 
+PrivateProvider.displayName = 'PrivateRouter';
+
 export default PrivateProvider;

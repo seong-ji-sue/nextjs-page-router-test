@@ -71,9 +71,9 @@ const config = {
 	images: {domains: ['*'], minimumCacheTTL: 60},
 	sassOptions: {includePaths: [join(__dirname, 'styles')]},
 	experimental: {
-		optimizePackageImports: [],
+		optimizePackageImports: ['@nextpr/client-common'],
 	},
-	transpilePackages: [],
+	transpilePackages: ['@nextpr/client-common'],
 	compiler: {
 		removeConsole:
 			process.env.NODE_ENV === 'production' ? {exclude: []} : false,

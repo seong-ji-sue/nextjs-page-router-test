@@ -1,3 +1,5 @@
+import '@nextpr/client-common/global-styles.scss';
+
 import React, {Suspense} from 'react';
 import Head from 'next/head';
 import getConfig from 'next/config';
@@ -31,7 +33,6 @@ function MyApp({Component, pageProps}) {
 					getLayout(
 						<>
 							<Component {...pageProps} />
-							<DefaultComponent />
 						</>,
 					)
 				) : (

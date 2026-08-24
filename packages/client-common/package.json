@@ -10,7 +10,8 @@
     "./api": "./src/api/index.js",
     "./axios": "./src/axios/index.js",
     "./icons": "./src/icons/index.js",
-    "./contents": "./src/contents/index.js"
+    "./contents": "./src/contents/index.js",
+    "./global-styles.scss": "./src/styles/global-styles.scss"
   },
 
   "dependencies": {

@@ -72,10 +72,7 @@ const Page = () => {
 	);
 };
 
-// getLayout 정적 메서드 추가
-Page.getLayout = (page) => {
-	return <PublicProvider>{page}</PublicProvider>;
-};
+export default Page;
 
 export const getStaticProps = async () => {
 	// 이 페이지는 빌드 시점에 정적으로 생성됩니다.
@@ -85,4 +82,6 @@ export const getStaticProps = async () => {
 	};
 };
 
-export default Page;
+Page.getLayout = (page) => {
+	return <PublicProvider>{page}</PublicProvider>;
+};
